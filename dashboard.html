@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR Realty Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+  <header class="dash-header">
+    <div class="wrap">
+      <h1>BR Realty Dashboard</h1>
+      <div class="header-actions">
+        <span id="userRoleLabel"></span>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </header>
 
+  <main class="wrap dash-main">
+    <section id="adminPanel" class="hidden">
+      <div class="grid">
+        <div class="box">
+          <h2>Assign Property to Client</h2>
+          <form id="propertyForm">
+            <label>Client User UID</label>
+            <input type="text" id="clientUid" required />
+
+            <label>Client Name</label>
+            <input type="text" id="clientName" required />
+
+            <label>Property Address</label>
+            <input type="text" id="propertyAddress" required />
+
+            <label>Current Stage</label>
+            <input type="text" id="propertyStage" placeholder="Under Review / In Rehab / Listed / Closed" required />
+
+            <label>Property Summary</label>
+            <textarea id="propertySummary" rows="4" required></textarea>
+
+            <button type="submit">Save Property Assignment</button>
+          </form>
+        </div>
+
+        <div class="box">
+          <h2>Add Progress Update</h2>
+          <form id="progressForm">
+            <label>Client User UID</label>
+            <input type="text" id="progressClientUid" required />
+
+            <label>Update Title</label>
+            <input type="text" id="updateTitle" required />
+
+            <label>Update Status</label>
+            <input type="text" id="updateStatus" placeholder="Inspection Complete / Demo Started / Rehab 80% / Closed" required />
+
+            <label>Update Notes</label>
+            <textarea id="updateNotes" rows="4" required></textarea>
+
+            <label>Progress Image</label>
+            <input type="file" id="updateImage" accept="image/*" />
+
+            <button type="submit">Upload Progress Update</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Upload Success Story</h2>
+        <form id="storyForm">
+          <label>Title</label>
+          <input type="text" id="storyTitle" required />
+
+          <label>Story</label>
+          <textarea id="storySummary" rows="5" required></textarea>
+
+          <label>Story Image</label>
+          <input type="file" id="storyImage" accept="image/*" required />
+
+          <button type="submit">Upload Success Story</button>
+        </form>
+      </div>
+
+      <div class="box">
+        <h2>All Assigned Properties</h2>
+        <div id="adminPropertiesList"></div>
+      </div>
+
+      <div class="box">
+        <h2>All Progress Updates</h2>
+        <div id="adminUpdatesList"></div>
+      </div>
+
+      <div class="box">
+        <h2>All Success Stories</h2>
+        <div id="adminStoriesList"></div>
+      </div>
+    </section>
+
+    <section id="clientPanel" class="hidden">
+      <div class="box">
+        <h2>Your Property</h2>
+        <div id="clientPropertyView"></div>
+      </div>
+
+      <div class="box">
+        <h2>Your Progress Updates</h2>
+        <div id="clientUpdatesView"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
