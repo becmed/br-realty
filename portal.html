@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR Realty Portal Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+  <div class="portal-page">
+    <div class="portal-card">
+      <h1>BR Realty Portal</h1>
+      <p>Admin and client sign in</p>
 
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="email" required />
+
+        <label>Password</label>
+        <input type="password" id="password" required />
+
+        <button type="submit">Sign In</button>
+      </form>
+
+      <div id="message" class="message"></div>
+
+      <a class="back-link" href="index.html">← Back to website</a>
+    </div>
+  </div>
+
+  <script type="module" src="portal.js"></script>
+</body>
+</html>
